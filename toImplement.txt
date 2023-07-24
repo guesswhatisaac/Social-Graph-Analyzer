@@ -1,0 +1,12 @@
++= IMPLEMENT THE FF: =+
+
+1. BFS for finding connections (connections method) // CHIARA & KEN
+    - https://www.geeksforgeeks.org/implementation-of-bfs-using-adjacency-matrix/
+
+2. FileReader class // NATHAN
+    - Represent txt files into adjacency matrix 
+
+3. Interface // NATHAN
+
+4. Find friends method // NATHAN
+
