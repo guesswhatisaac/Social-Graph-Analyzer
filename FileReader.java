@@ -1,36 +1,44 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class FileReader {
-    /*
-     * This function reads a file from the given path, and
-     * returns an array of Record objects representing the
-     * data that was read.
-     */
 
     public int[][] readFile(String path) {
 
-        try {
+        try{
+            File file = new File(path);
+            Scanner scan = new Scanner(file);
 
-            File f = new File(path);
-            Scanner scanner = new Scanner(f);
-            int n = scanner.nextInt(); // Get the number of records
-
-            Record[] result = new Record[n]; // Initialize array of records
-            for (int i = 0; i < n; i++) { // Loop through each record
-                int idNumber = scanner.nextInt(); // get the ID number
-                String name = scanner.nextLine(); // get the name
-                Record record = new Record(name, idNumber); // instantiate a new Record object
-                result[i] = record; // Store the record in the array
-            }
-            scanner.close();
-            return result;
+            int n = scan.nextInt();
+            int e = scan.nextInt();
+            int[][] matrix = new int[n][n];
             
-        } catch (FileNotFoundException e) {
+            for(int[] row : matrix){ // set matrix values to 0
+                Arrays.fill(row, 0);
+            }
+
+            for(int i = 0; i < e; i++){ // create connections between users
+
+                int a = scan.nextInt();
+                int b  = scan.nextInt();
+                
+                if(a != b){
+                    matrix[a][b] = 1;
+                    matrix[b][a] = 1;
+                }
+            }
+
+            scan.close();
+            return matrix;
+
+        } catch(FileNotFoundException e) {
             System.err.println("File not found.");
             e.printStackTrace();
             return null;
         }
     }
 }
+
+

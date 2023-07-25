@@ -10,3 +10,4 @@
 
 4. Find friends method // NATHAN
 
+NOTES: probably do some method to validate outputs?
