@@ -38,7 +38,6 @@ public class SocialGraph {
         System.out.println();
     }
 
-
     public void getConnection(int[][] matrix, int start, int end){
 
         boolean[] visited = new boolean[matrix.length]; 
@@ -82,7 +81,6 @@ public class SocialGraph {
         }
         return path;
     }
-
 
     //Prints the path
     private void printPath(List<Integer> path, int start, int end) {
