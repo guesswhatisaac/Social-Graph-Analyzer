@@ -46,6 +46,18 @@ public class Main {
             }
             else if(choice == 2){
                 
+                System.out.print("\nEnter ID of 1st person : ");
+                int start = scan.nextInt(); // TODO: Input validation
+
+                System.out.print("\nEnter ID of 2nd person : ");
+                int end = scan.nextInt(); // TODO: Input validation
+                
+                if(start >= matrix.length || end >= matrix.length){
+                    System.out.println("One of the User IDs does not exist.");
+                }
+                else{
+                    social.getConnection(matrix, start, end); 
+                }  
             }
 
         } while(choice != 3);

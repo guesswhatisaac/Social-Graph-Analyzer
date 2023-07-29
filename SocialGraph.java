@@ -24,7 +24,7 @@ public class SocialGraph {
         // searches through userID's row and tracks friends
         for(int i = 0; i < matrix.length; i++){
             if(matrix[userID][i] == 1){
-                friendList.add(counter, i); 
+                friendList.add(i);
                 counter++;
             }
         }
@@ -71,7 +71,6 @@ public class SocialGraph {
         // If the loop ends without finding the end vertex, print no connection
         System.out.println("Cannot find a connection between " + start + " and " + end + ".");
     }
-
 
     private List<Integer> reconstructPath(int[] parent, int start, int end) {
 
