@@ -40,6 +40,12 @@ public class SocialGraph {
 
     public void getConnection(int[][] matrix, int start, int end){
 
+        if(start == end){
+            System.out.println("/nA user cannot be connected with themselves.");
+            return;    
+        }
+
+        
         boolean[] visited = new boolean[matrix.length]; 
         int[] parent = new int[matrix.length];  //Stores the parent vertex for each vertex during traversal
         Arrays.fill(parent, -1);                //All values are set to -1 initially to indicate that no parent is assigned yet
@@ -72,7 +78,6 @@ public class SocialGraph {
     }
 
     private List<Integer> reconstructPath(int[] parent, int start, int end) {
-
         List<Integer> path = new ArrayList<>();     //Stores the vertices in the connection path from end to start (reverse order)
         int currentVertex = end;
         while (currentVertex != -1) {       //Loops until currentVertex becomes -1, meaning we've reached the starting vertex (no parent)

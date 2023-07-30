@@ -11,3 +11,5 @@
 4. Find friends method // NATHAN
 
 NOTES: probably do some method to validate outputs?
+
+5. Check method for getConnections // KEN

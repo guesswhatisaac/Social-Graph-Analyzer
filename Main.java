@@ -28,16 +28,16 @@ public class Main {
             System.out.println("[2] Get Connection");
             System.out.println("[3] Exit");
 
-            do{ // TODO: Input validation (for invalid characters)
+            do{
                 System.out.print("\n[ ] : ");
                 choice = scan.nextInt();
             } while (choice < 1 || choice > 3);
 
             if(choice == 1){
                 System.out.print("\nEnter ID of Person : ");
-                int userID = scan.nextInt(); // TODO: Input validation
+                int userID = scan.nextInt();
                 
-                if(userID >= matrix.length){
+                if(userID >= matrix.length || userID < 0){
                     System.out.println("User does not exist.");
                 }
                 else{
@@ -52,7 +52,7 @@ public class Main {
                 System.out.print("\nEnter ID of 2nd person : ");
                 int end = scan.nextInt(); // TODO: Input validation
                 
-                if(start >= matrix.length || end >= matrix.length){
+                if((start >= matrix.length || end >= matrix.length) || (start < 0 || end < 0)){
                     System.out.println("One of the User IDs does not exist.");
                 }
                 else{
